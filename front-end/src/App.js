@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Header, Home } from './components';
+import { Header, Home, ProductList } from './components';
 import { Route } from 'react-router-dom';
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
     <>
     <Header />
     
-    <Route path="/" component={Home} />
+    <Route exact path="/" component={Home} />
+    <Route path="/productlist" component={ProductList} />
     </>
   );
 }
