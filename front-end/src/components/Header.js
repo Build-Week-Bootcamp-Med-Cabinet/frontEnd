@@ -1,15 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { StyledHeader } from './style';
+import { User } from './index';
+import logo from '../assets/isolated-layout.svg';
+import { StyledHeader, StyledNavUl, StyledImg, StyledNavLink } from './style';
 
 const Header = () => {
     return(
         <StyledHeader>
-            <h1>Header's Header</h1>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/productlist">Products</Link></li>
-            </ul>
+            <StyledImg src={logo} alt="logo" />
+            <StyledNavUl>
+                <li><StyledNavLink to="/">Home</StyledNavLink></li>
+                <li><StyledNavLink to="/productlist">Products</StyledNavLink></li>
+            </StyledNavUl>
+            <User />
         </StyledHeader>
     )
 }
