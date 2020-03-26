@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Header, Home, ProductList } from './components';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/productlist" component={ProductList} />
+      <Redirect path="*" to="/"></Redirect>
     </Switch>
     </>
   );
