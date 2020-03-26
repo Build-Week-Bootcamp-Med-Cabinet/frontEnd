@@ -1,15 +1,15 @@
 import React from 'react';
 import { User } from './index';
-import logo from '../assets/isolated-layout.svg';
-import { StyledHeader, StyledNavUl, StyledImg, StyledNavLink } from './style';
+import logo from '../assets/isolated-monochrome-brown.svg';
+import { StyledHeader, StyledNavUl, StyledImg, StyledNavLink, StyledNavLinkActive } from './style';
 
 const Header = () => {
     return(
         <StyledHeader>
             <StyledImg src={logo} alt="logo" />
             <StyledNavUl>
-                <li><StyledNavLink to="/">Home</StyledNavLink></li>
-                <li><StyledNavLink to="/productlist">Products</StyledNavLink></li>
+                <li><StyledNavLink exact to="/" activeStyle={StyledNavLinkActive}>Home</StyledNavLink></li>
+                <li><StyledNavLink to="/productlist" activeStyle={StyledNavLinkActive}>Products</StyledNavLink></li>
             </StyledNavUl>
             <User />
         </StyledHeader>

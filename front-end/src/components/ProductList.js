@@ -1,12 +1,17 @@
 import React from 'react';
-import { Product } from './index';
-import { StyledProductListSection } from './style';
+import { Product, Search } from './index';
+import { StyledProductListSection, StyledProductListDiv } from './style';
+import { Data } from './Data';
 
 const ProductList = () => {
     return(
         <StyledProductListSection>
-            <h2>ProductList's Header</h2>
-            <Product />
+            <Search />
+            <StyledProductListDiv>
+            {Data().map(strain => {
+                return <Product strain={strain} key={strain.key} />
+            })}
+            </StyledProductListDiv>
         </StyledProductListSection>
     )
 }

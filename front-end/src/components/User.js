@@ -1,5 +1,5 @@
 import React from 'react';
-import user from '../assets/user.svg';
+import user from '../assets/user-brown.svg';
 import { StyledUser } from './style';
 
 const User = (props) => {
