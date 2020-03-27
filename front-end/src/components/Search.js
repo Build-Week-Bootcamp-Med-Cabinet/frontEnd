@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { StyledSearchForm, StyledSearchInput } from './style';
 
 const Search = (props) => {
     const onSubmit = (data, e) => {
@@ -9,9 +10,9 @@ const Search = (props) => {
 
     const { register, handleSubmit } = useForm();
     return(
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input name="search" id="search" placeholder="Search" ref={register({ required: true })} />
-        </form>
+        <StyledSearchForm onSubmit={handleSubmit(onSubmit)}>
+            <StyledSearchInput name="search" id="search" placeholder="Search" ref={register({ required: true })} />
+        </StyledSearchForm>
     )
 }
 

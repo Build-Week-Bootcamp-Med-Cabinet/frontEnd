@@ -124,8 +124,22 @@ export const StyledRatingP = styled.p`
 
 // Search Styles
 
-export const StyledSearchErrorP = styled.p`
-    color: red;
-    font-family: 'Times New Roman';
-    font-size: 12px;
+export const StyledSearchForm = styled.form`
+    display: flex;
+    justify-content: center;
+`;
+
+export const StyledSearchInput = styled.input`
+    border: none;
+    padding: 3px 5px;
+    border-bottom: 2px solid #a98c6a;
+    background-color: #7c6a53;
+    height: 24px;
+    font-size: 16px;
+    color: #e1e9eb;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    &::placeholder {
+        color: #e1e9eb;
+    }
 `;

@@ -11,6 +11,7 @@ const ProductList = () => {
             return strain.name.includes(query.search);
         }))
     }
+    
     return(
         <StyledProductListSection>
             <Search search={searchHandler} />
