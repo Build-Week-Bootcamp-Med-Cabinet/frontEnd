@@ -6,7 +6,6 @@ const Search = (props) => {
     const onSubmit = (data, e) => {
         console.log(data)
         props.search(data);
-        e.target.reset();
     }
 
     const { register, handleSubmit } = useForm();
