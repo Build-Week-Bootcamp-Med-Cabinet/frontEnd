@@ -8,7 +8,7 @@ const ProductList = () => {
 
     const searchHandler = query => {
         setStrains(Data().filter(strain => {
-            return strain.name.includes(query.search);
+            return strain.name.toLowerCase().includes(query.search);
         }))
     }
     

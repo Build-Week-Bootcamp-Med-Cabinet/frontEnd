@@ -142,4 +142,7 @@ export const StyledSearchInput = styled.input`
     &::placeholder {
         color: #e1e9eb;
     }
+    &:focus {
+        outline: solid #e1e9eb;
+    }
 `;
