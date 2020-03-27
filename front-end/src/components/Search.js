@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { StyledSearchForm, StyledSearchInput } from './style';
 
 const Search = (props) => {
-    const onSubmit = (data, e) => {
+    const onSubmit = data => {
         console.log(data)
         props.search(data);
     }
