@@ -7,7 +7,6 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     height: 50px;
-    border-bottom: 1px solid #a98c6a;
     position: fixed;
     width: 100%;
     background-color: white;
@@ -41,6 +40,7 @@ export const StyledNavUl = styled.ul`
     justify-content: space-around;
     align-items: center;
     padding: 0;
+    border-bottom: 1px solid #a98c6a;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -124,6 +124,8 @@ export const StyledRatingP = styled.p`
 
 // Search Styles
 
-export const StyledSearchDiv = styled.div`
-    
+export const StyledSearchErrorP = styled.p`
+    color: red;
+    font-family: 'Times New Roman';
+    font-size: 12px;
 `;
