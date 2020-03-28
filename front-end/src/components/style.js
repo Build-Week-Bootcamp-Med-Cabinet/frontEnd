@@ -7,7 +7,6 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     height: 50px;
-    position: fixed;
     width: 100%;
     background-color: white;
     @media (min-width: 1280px) {
@@ -76,10 +75,7 @@ export const StyledHomeSection = styled.section`
 export const StyledProductListSection = styled.section`
     color: green;
     min-height: 100vh;
-    padding: 75px 10px 25px 10px;
-    @media (min-width: 1280px) {
-        padding-top: 100px;
-    }
+    padding: 25px 10px;
 `;
 
 export const StyledProductListDiv = styled.div`
@@ -141,8 +137,5 @@ export const StyledSearchInput = styled.input`
     font-weight: bold;
     &::placeholder {
         color: #e1e9eb;
-    }
-    &:focus {
-        outline: solid #e1e9eb;
     }
 `;
