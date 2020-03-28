@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Header, Home, ProductList } from './components';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -29,6 +29,8 @@ function App() {
     <Header />
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route path='/login' component={Login} />
+      <Route path='/register' component={Register} />
       <Route path="/productlist" component={ProductList} />
       <Redirect path="*" to="/"></Redirect>
     </Switch>

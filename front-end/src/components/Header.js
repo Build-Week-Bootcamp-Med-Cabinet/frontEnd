@@ -15,6 +15,8 @@ const Header = () => {
             <StyledNavUl>
                 <li><StyledNavLink exact to="/" activeStyle={StyledNavLinkActive}>Home</StyledNavLink></li>
                 <li><StyledNavLink to="/productlist" activeStyle={StyledNavLinkActive}>Products</StyledNavLink></li>
+                <li><StyledNavLink to="/login" activeStyle={StyledNavLinkActive}>Sign-In</StyledNavLink></li>
+                <li><StyledNavLink to="/register" activeStyle={StyledNavLinkActive}>Register</StyledNavLink></li>
             </StyledNavUl>
             <User />
         </StyledHeader>
