@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
+import { Header, Home, ProductList } from './components';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import axios from 'axios';
 import axiosWithAuth from './utils/axiosWithAuth';
@@ -23,12 +25,14 @@ function App() {
   // }, [])
 
   return (
-    <userContext.Provider value= {{ addData, weedData }}>
-    <div className="App">
-    {/* <Login /> */}
-    <Register />
-    </div>
-    </userContext.Provider>
+    <>
+    <Header />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/productlist" component={ProductList} />
+      <Redirect path="*" to="/"></Redirect>
+    </Switch>
+    </>
   );
 }
 
