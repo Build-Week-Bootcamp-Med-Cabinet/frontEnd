@@ -10,7 +10,7 @@ export default function Login (props) {
             .then((res) => {
                 console.log(data);
                 localStorage.setItem('token', res.data.payload);
-                props.history.push('/productlist')
+                props.history.push('/profile')
             })
             .catch(err => {console.error(err)});
     }
