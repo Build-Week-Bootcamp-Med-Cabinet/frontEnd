@@ -1,52 +1,45 @@
-import React, { useState } from 'react';
-// import { useForm } from 'react-hook-form';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import axiosWithAuth from './../utils/axiosWithAuth';
 
 export default function Login (props) {
-    const [ data, setdata ] = useState({
-        username: '',
-        password: ''
-    });
-
-    const handleChange = e => {
-        const value = e.target.value;
-        setdata({
-            ...data,
-            [e.target.name]: value
-        });
-    };
-    const login = e => {
-        e.preventDefault();
-
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = (data) => {
         axiosWithAuth()
-            .post('http://localhost:placeholderdata', data)
+            .post('api/auth/login', data)
             .then((res) => {
-                console.log(res.data);
+                console.log(data);
                 localStorage.setItem('token', res.data.payload);
-                props.history.push('/placeholderdata')
+                props.history.push('/')
             })
+            .catch(err => {console.error(err)});
     }
+    console.log(errors);
 
     return (
         <>
-      <h1>Welcome to Med Cabinet!</h1>
-      <form onSubmit={login}>
-            <input
-                type="text"
-                placeholder="username"
-                name="username"
-                value={data.username}
-                onChange={handleChange}
-            />
-            <input
-                type="password"
-                placeholder="password"
-                name="password"
-                value={data.password}
-                onChange={handleChange}
-            />
-            <button type='submit'>Log in</button>
+        <h1>Welcome to Med Cabinet!</h1>
+        <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+        type="text"
+        placeholder="Username"
+        name="Username"
+        ref={register({
+            required: true,
+            maxLength: 80})}
+        />
+        <input
+        type="password"
+        placeholder="Password"
+        name="Password"
+        ref={register({
+            required: true,
+            max: 10,
+            min: 5,
+            maxLength: 100})}
+        />
+        <input type="submit" />
         </form>
-    </>
-    )
-}
+        </>
+    );
+    }
