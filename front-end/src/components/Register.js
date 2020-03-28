@@ -10,7 +10,7 @@ export default function Register (props) {
             .post('/auth/register/', data)
             .then((res) => {
                 console.log(res);
-                props.history.push('/profile-page')
+                props.history.push('/login')
             })
             .catch(err => {console.error(err)});
     }
