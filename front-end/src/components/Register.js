@@ -1,13 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import axiosWithAuth from '../utils/axiosWithAuth';
-
+import axios from 'axios'
 export default function Register (props) {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         console.log(data);
         axiosWithAuth()
-            .post('/auth/register/', data)
+            .post('/auth/register', data)
             .then((res) => {
                 console.log(res);
                 props.history.push('/login')
@@ -31,7 +31,7 @@ export default function Register (props) {
             <input
                 type="text"
                 placeholder="Last Name"
-                name="lastname"
+                name="lastName"
                 ref={register({
                     required: true,
                     maxLength: 80})}
