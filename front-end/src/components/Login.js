@@ -5,10 +5,10 @@ import axiosWithAuth from './../utils/axiosWithAuth';
 import userContext from './../contexts/index';
 
 export default function Login (props) {
-    // const { currentUser, setCurrentUser } = useContext(userContext);
-    // const addCurrentUser = item => {
-    //     setCurrentUser([...currentUser, item])
-    //   };
+    const { currentUser, setCurrentUser } = useContext(userContext);
+    const addCurrentUser = item => {
+        setCurrentUser([...currentUser, item])
+      };
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
