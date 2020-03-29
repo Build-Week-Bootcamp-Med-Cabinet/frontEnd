@@ -17,7 +17,8 @@ export default function Login (props) {
             .then((res) => {
                 console.log(data);
                 props.history.push('/productlist')
-                // console.log(currentUser);
+                setCurrentUser(res.data);
+                console.log(currentUser);
             })
             .catch(err => {console.error(err)});
     }
