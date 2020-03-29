@@ -12,6 +12,7 @@ import Register from './components/Register';
 import User from './components/User';
 
 function App() {
+
   const [ userData, setUserData] = useState([]);
   const addUserData = item => {
     setUserData([...userData, item])
@@ -26,7 +27,7 @@ function App() {
   }, [])
 
   return (
-    <userContext.Provider value={{ userData }} >
+    <userContext.Provider value={{ userData, setUserData, addUserData }} >
       {console.log(userData)}
     <>
     <Header />
@@ -34,7 +35,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path='/login' component={Login} />
       <Route path='/register' component={Register} />
-      <Route path="/productlist" component={ProductList} />
+      <PrivateRoute path="/productlist" component={ProductList} />
       <PrivateRoute path='/profile' component={User} />
       <Redirect path="*" to="/"></Redirect>
     </Switch>

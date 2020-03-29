@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axiosWithAuth from './../utils/axiosWithAuth';
 
+import userContext from './../contexts/index';
+
 export default function Login (props) {
+    // const { currentUser, setCurrentUser } = useContext(userContext);
+    // const addCurrentUser = item => {
+    //     setCurrentUser([...currentUser, item])
+    //   };
+
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
         axiosWithAuth()
             .post('/auth/login', data)
             .then((res) => {
                 console.log(data);
-                localStorage.setItem('token', res.data.payload);
-                props.history.push('/profile')
+                props.history.push('/productlist')
+                // console.log(currentUser);
             })
             .catch(err => {console.error(err)});
     }
