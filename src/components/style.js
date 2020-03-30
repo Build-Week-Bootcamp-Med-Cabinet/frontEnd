@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const ImageUrls = {
+    HomeBg: 'https://raw.githubusercontent.com/Build-Week-Bootcamp-Med-Cabinet/marketingPage/master/img/weed-bg.jpg',
+    WeedRedGreen: 'https://raw.githubusercontent.com/Build-Week-Bootcamp-Med-Cabinet/marketingPage/master/img/weedRedGreen.jpg',
+    WeedHeartEyes: 'https://raw.githubusercontent.com/Build-Week-Bootcamp-Med-Cabinet/marketingPage/master/img/weedHeartEyes.jpg',
+    WeedHeart: 'https://raw.githubusercontent.com/Build-Week-Bootcamp-Med-Cabinet/marketingPage/master/img/weedHeart.jpg',
+    WeedCookies: 'https://raw.githubusercontent.com/Build-Week-Bootcamp-Med-Cabinet/marketingPage/master/img/weedCookies.jpg'
+}
+
 // Header Styles
 
 export const StyledHeader = styled.header`
@@ -66,9 +74,75 @@ export const StyledNavLinkActive = {
 
 // Home Styles
 
-export const StyledHomeSection = styled.section`
-    color: red;
+export const HomePageStyling = styled.div`
+    margin: auto;
+    background-image: url(${ImageUrls.HomeBg});
+    font-family: "Roboto", sans-serif;
+    color: white;
+    min-height: 100vh;
 `;
+
+export const StyledHomeSection = styled.section`
+    margin: auto;
+    width: 80%;
+`;
+
+export const StyledBoxDiv = styled.div`
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+`;
+
+export const StyledImgDiv = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const StyledMidImage = styled.img`
+    height: 300px;
+    width: 300px;
+    vertical-align: middle;
+`;
+
+export const StyledHomeTextCont = styled.div`
+    margin: auto;
+    height: 600px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+`;
+
+export const StyledHomeP = styled.p`
+    font-size: 2rem;
+    margin: 10px;
+    padding: 10px;
+`;
+
+export const StyledHomeButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 75px;
+    border-radius: 15px;
+    background-color: #a98c6a;
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+`;
+
+export const StyledBottomContDiv = styled.div`
+    margin: auto;
+    width: 80%;
+    display: flex;
+`;
+
+
 
 // ProductList Styles
 
